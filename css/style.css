@@ -336,27 +336,25 @@ template {
   box-shadow: 0 0 35px rgba(218, 229, 239, 0.9);
 }
 .page-header {
-  border: 1px solid black;
-  margin: 0px auto;
-  max-width: 2000px;
+  /*.container-fluid();*/
   display: flex;
 }
 .page-header__wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid red;
-  margin: 0px auto;
-  max-width: 1470px;
-  padding-left: 15px;
-  padding-right: 15px;
+  /*.container();*/
+  max-width: 1200px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .page-header__logo {
   border: 1px solid green;
 }
 .promo {
-  border: 1px solid red;
   margin: 0px auto;
   max-width: 2000px;
   padding-bottom: 500px;
@@ -369,7 +367,7 @@ template {
   margin-top: 200px;
 }
 .promo__title {
-  margin: -50px auto 0;
+  /*margin: -50px auto 0;*/
   text-align: center;
   color: #000000;
   font-family: Montserrat;
@@ -403,8 +401,11 @@ template {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -230px;
+  /*margin-top: -230px;*/
   z-index: 1;
+  position: absolute;
+  left: 50%;
+  margin-left: -207px;
 }
 .logo__title {
   margin-top: 240px;
@@ -431,9 +432,9 @@ template {
 }
 .blocks__items {
   display: flex;
-  border: 1px solid blue;
-  margin-bottom: 90px;
-  margin-top: 60px;
+  align-items: center;
+  justify-content: center;
+  margin: 60px auto 90px auto;
 }
 .blocks__item {
   text-align: center;
@@ -464,6 +465,7 @@ template {
   margin: 80px auto 0;
 }
 .photo__block {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -471,25 +473,28 @@ template {
   flex-direction: row-reverse;
 }
 .photo__img1 {
-  border: 1px solid blue;
-  /*max-width: 997px;*/
+  box-sizing: border-box;
   width: 50%;
 }
 .photo__img1 img {
   width: 100%;
   height: auto;
+  display: block;
+  /*margin: 0;
+		padding: 0;*/
 }
 .photo__img2 {
-  border: 1px solid blue;
+  box-sizing: border-box;
   /*max-width: 997px;*/
   width: 50%;
 }
 .photo__img2 img {
   width: 100%;
   height: auto;
+  display: block;
 }
 .photo__text {
-  border: 1px solid blue;
+  box-sizing: border-box;
   background-color: #f7f8fc;
   /*max-width: 997px;*/
   width: 50%;
@@ -542,7 +547,6 @@ template {
   z-index: 1;
   padding-top: 150px;
   padding-bottom: 150px;
-  border: 1px solid red;
   margin: 0px auto;
   max-width: 1470px;
   padding-left: 15px;
@@ -560,12 +564,12 @@ template {
   flex-direction: row-reverse;
 }
 .review__img {
-  border: 1px solid blue;
   max-width: 449px;
 }
 .review__img img {
   width: 100%;
   height: auto;
+  display: block;
 }
 .review__text {
   width: 50%;
@@ -593,7 +597,6 @@ template {
   background-position: center;
 }
 .about__wrapper {
-  border: 1px solid red;
   margin: 0px auto;
   max-width: 1470px;
   padding-left: 15px;
@@ -627,9 +630,11 @@ template {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 50px;
-  padding-bottom: 700px;
+  /*padding-bottom: 700px;*/
   padding-top: 100px;
   text-align: center;
+  height: 100vh;
+  position: relative;
 }
 /* Анимационные социальные кнопки
 .social {
@@ -803,13 +808,34 @@ template {
 */
 .social {
   margin: 0 auto;
-  border: 1px solid red;
   display: flex;
   align-items: flex-end;
   height: 200px;
   max-width: 550px;
   justify-content: space-around;
   overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+.bouncer--1 img,
+.bouncer--2 img,
+.bouncer--3 img,
+.bouncer--4 img,
+.bouncer--5 img,
+.bouncer--6 img,
+.bouncer--7 img,
+.bouncer--8 img,
+.bouncer--9 img,
+.bouncer--10 img,
+.bouncer--11 img,
+.bouncer--12 img,
+.bouncer--13 img,
+.bouncer--14 img,
+.bouncer--15 img,
+.bouncer--16 img,
+.bouncer--17 img {
+  width: 100%;
+  height: auto;
 }
 .bouncer {
   background-color: transparent;
@@ -870,8 +896,8 @@ template {
           animation-name: jump--5;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
-  -webkit-animation-duration: 1.2s;
-          animation-duration: 1.2s;
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
@@ -1497,21 +1523,18 @@ template {
             transform: translateY(-400%);
   }
 }
-.search {
-  border: 1px solid green;
-}
 .search a {
   text-decoration: none;
 }
-form {
-  border: 1px solid red;
+.search form {
+  border-radius: 5px;
   position: relative;
   width: 250px;
   margin: 0 auto;
   height: 60px;
   transition: .3s;
 }
-input {
+.search input {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   height: 60px;
@@ -1528,7 +1551,7 @@ input {
   z-index: 2;
   cursor: pointer;
 }
-input:focus {
+.search input:focus {
   width: 200px;
   z-index: 1;
   border-bottom: 2px solid #efefef;
@@ -1625,7 +1648,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 100px;
+  top: 10%;
   left: 0;
   /*transition: .5s ease;*/
   -webkit-animation: toggle .5s ease forwards;
@@ -1636,6 +1659,7 @@ input:focus {
   padding-top: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid #efefef;
+  z-index: 100;
 }
 @-webkit-keyframes toggle {
   0% {
@@ -1643,8 +1667,8 @@ input:focus {
             transform: translateY(-200px);
   }
   100% {
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
   }
 }
 @keyframes toggle {
@@ -1653,8 +1677,8 @@ input:focus {
             transform: translateY(-200px);
   }
   100% {
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
   }
 }
 @-webkit-keyframes toggle-rotate {
@@ -1677,10 +1701,11 @@ input:focus {
   height: 300px;
   width: 50px;
   margin-left: 50px;
-  position: relative;
-  top: 100px;
-  border: 1px solid green;
   text-align: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
 }
 .heart,
 .heart-small {
@@ -1697,8 +1722,8 @@ input:focus {
           animation-name: heart--1;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -1763,10 +1788,10 @@ input:focus {
 .heart--2.active {
   -webkit-animation-name: heart--2;
           animation-name: heart--2;
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -1823,10 +1848,10 @@ input:focus {
 .heart--3.active {
   -webkit-animation-name: heart--3;
           animation-name: heart--3;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -1891,10 +1916,10 @@ input:focus {
 .heart--4.active {
   -webkit-animation-name: heart--4;
           animation-name: heart--4;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -1959,10 +1984,10 @@ input:focus {
 .heart--5.active {
   -webkit-animation-name: heart--5;
           animation-name: heart--5;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 0.65s;
+          animation-delay: 0.65s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2027,10 +2052,10 @@ input:focus {
 .heart--6.active {
   -webkit-animation-name: heart--6;
           animation-name: heart--6;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2087,10 +2112,10 @@ input:focus {
 .heart--7.active {
   -webkit-animation-name: heart--3;
           animation-name: heart--3;
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 0.95s;
+          animation-delay: 0.95s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2155,10 +2180,10 @@ input:focus {
 .heart--8.active {
   -webkit-animation-name: heart--8;
           animation-name: heart--8;
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 1.05s;
+          animation-delay: 1.05s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2223,10 +2248,10 @@ input:focus {
 .heart--9.active {
   -webkit-animation-name: heart--9;
           animation-name: heart--9;
-  -webkit-animation-delay: 0.77s;
-          animation-delay: 0.77s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2291,10 +2316,10 @@ input:focus {
 .heart--10.active {
   -webkit-animation-name: heart--10;
           animation-name: heart--10;
-  -webkit-animation-delay: 0.87s;
-          animation-delay: 0.87s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 1.35s;
+          animation-delay: 1.35s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2310,13 +2335,7 @@ input:focus {
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1);
   }
-  1% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
   50% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
     opacity: 0.5;
   }
   90% {
@@ -2339,13 +2358,7 @@ input:focus {
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1);
   }
-  1% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
-  }
   50% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
     opacity: 0.5;
   }
   90% {
@@ -2363,10 +2376,10 @@ input:focus {
 .heart--11.active {
   -webkit-animation-name: heart--11;
           animation-name: heart--11;
-  -webkit-animation-delay: 0.97s;
-          animation-delay: 0.97s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2431,10 +2444,10 @@ input:focus {
 .heart--12.active {
   -webkit-animation-name: heart--12;
           animation-name: heart--12;
-  -webkit-animation-delay: 1.05s;
-          animation-delay: 1.05s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 1.65s;
+          animation-delay: 1.65s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2499,10 +2512,10 @@ input:focus {
 .heart--13.active {
   -webkit-animation-name: heart--13;
           animation-name: heart--13;
-  -webkit-animation-delay: 1.15s;
-          animation-delay: 1.15s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2567,10 +2580,10 @@ input:focus {
 .heart--14.active {
   -webkit-animation-name: heart--14;
           animation-name: heart--14;
-  -webkit-animation-delay: 1.25s;
-          animation-delay: 1.25s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 1.95s;
+          animation-delay: 1.95s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2635,10 +2648,10 @@ input:focus {
 .heart--15.active {
   -webkit-animation-name: heart--15;
           animation-name: heart--15;
-  -webkit-animation-delay: 1.35s;
-          animation-delay: 1.35s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2704,10 +2717,10 @@ input:focus {
 .heart--16.active {
   -webkit-animation-name: heart--16;
           animation-name: heart--16;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2788,10 +2801,10 @@ input:focus {
 .heart--17.active {
   -webkit-animation-name: heart--17;
           animation-name: heart--17;
-  -webkit-animation-delay: 1.45s;
-          animation-delay: 1.45s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 2.25s;
+          animation-delay: 2.25s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2856,10 +2869,10 @@ input:focus {
 .heart--18.active {
   -webkit-animation-name: heart--18;
           animation-name: heart--18;
-  -webkit-animation-delay: 1.52s;
-          animation-delay: 1.52s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 2.35s;
+          animation-delay: 2.35s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2916,10 +2929,10 @@ input:focus {
 .heart--19.active {
   -webkit-animation-name: heart--19;
           animation-name: heart--19;
-  -webkit-animation-delay: 1.62s;
-          animation-delay: 1.62s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 2.45s;
+          animation-delay: 2.45s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -2984,10 +2997,10 @@ input:focus {
 .heart--20.active {
   -webkit-animation-name: heart--20;
           animation-name: heart--20;
-  -webkit-animation-delay: 1.72s;
-          animation-delay: 1.72s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 2.55s;
+          animation-delay: 2.55s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3052,10 +3065,10 @@ input:focus {
 .heart--21.active {
   -webkit-animation-name: heart--21;
           animation-name: heart--21;
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3112,10 +3125,10 @@ input:focus {
 .heart--22.active {
   -webkit-animation-name: heart--22;
           animation-name: heart--22;
-  -webkit-animation-delay: 1.9s;
-          animation-delay: 1.9s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3180,10 +3193,10 @@ input:focus {
 .heart--23.active {
   -webkit-animation-name: heart--23;
           animation-name: heart--23;
-  -webkit-animation-delay: 2.08s;
-          animation-delay: 2.08s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 2.95s;
+          animation-delay: 2.95s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3248,10 +3261,10 @@ input:focus {
 .heart--24.active {
   -webkit-animation-name: heart--24;
           animation-name: heart--24;
-  -webkit-animation-delay: 2.18s;
-          animation-delay: 2.18s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 3.1s;
+          animation-delay: 3.1s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3316,10 +3329,10 @@ input:focus {
 .heart--25.active {
   -webkit-animation-name: heart--25;
           animation-name: heart--25;
-  -webkit-animation-delay: 2.28s;
-          animation-delay: 2.28s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 3.25s;
+          animation-delay: 3.25s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3384,10 +3397,10 @@ input:focus {
 .heart--26.active {
   -webkit-animation-name: heart--26;
           animation-name: heart--26;
-  -webkit-animation-delay: 2.38s;
-          animation-delay: 2.38s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 3.35s;
+          animation-delay: 3.35s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3452,10 +3465,10 @@ input:focus {
 .heart--27.active {
   -webkit-animation-name: heart--27;
           animation-name: heart--27;
-  -webkit-animation-delay: 2.48s;
-          animation-delay: 2.48s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3520,10 +3533,10 @@ input:focus {
 .heart--28.active {
   -webkit-animation-name: heart--28;
           animation-name: heart--28;
-  -webkit-animation-delay: 2.55s;
-          animation-delay: 2.55s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 3.6s;
+          animation-delay: 3.6s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3580,10 +3593,10 @@ input:focus {
 .heart--29.active {
   -webkit-animation-name: heart--29;
           animation-name: heart--29;
-  -webkit-animation-delay: 2.66s;
-          animation-delay: 2.66s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 3.75s;
+          animation-delay: 3.75s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3648,10 +3661,10 @@ input:focus {
 .heart--30.active {
   -webkit-animation-name: heart--30;
           animation-name: heart--30;
-  -webkit-animation-delay: 2.75s;
-          animation-delay: 2.75s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-delay: 3.9s;
+          animation-delay: 3.9s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3717,10 +3730,10 @@ input:focus {
 .heart-small--1 {
   -webkit-animation-name: heart-small--1;
           animation-name: heart-small--1;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3741,11 +3754,16 @@ input:focus {
   3% {
     opacity: 1;
   }
-  30% {
+  15% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-30px);
+            transform: translateY(-300px) translateX(-30px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(-30px);
@@ -3766,11 +3784,16 @@ input:focus {
   3% {
     opacity: 1;
   }
-  30% {
+  15% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-30px);
+            transform: translateY(-300px) translateX(-30px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(-30px);
@@ -3781,10 +3804,10 @@ input:focus {
 .heart-small--2 {
   -webkit-animation-name: heart-small--2;
           animation-name: heart-small--2;
-  -webkit-animation-delay: 3.05s;
-          animation-delay: 3.05s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 3.55s;
+          animation-delay: 3.55s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3805,13 +3828,18 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     -webkit-transform: translateY(-200px) translateX(22px);
             transform: translateY(-200px) translateX(22px);
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(0px);
+            transform: translateY(-300px) translateX(0px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(0px);
@@ -3832,13 +3860,18 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     -webkit-transform: translateY(-200px) translateX(22px);
             transform: translateY(-200px) translateX(22px);
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(0px);
+            transform: translateY(-300px) translateX(0px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(0px);
@@ -3849,10 +3882,10 @@ input:focus {
 .heart-small--3 {
   -webkit-animation-name: heart-small--3;
           animation-name: heart-small--3;
-  -webkit-animation-delay: 3.1s;
-          animation-delay: 3.1s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 3.6s;
+          animation-delay: 3.6s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3873,13 +3906,18 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     -webkit-transform: translateY(-180px) translateX(-17px);
             transform: translateY(-180px) translateX(-17px);
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-5px);
+            transform: translateY(-300px) translateX(-5px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(-5px);
@@ -3900,13 +3938,18 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     -webkit-transform: translateY(-180px) translateX(-17px);
             transform: translateY(-180px) translateX(-17px);
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-5px);
+            transform: translateY(-300px) translateX(-5px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(-5px);
@@ -3917,10 +3960,10 @@ input:focus {
 .heart-small--4 {
   -webkit-animation-name: heart-small--4;
           animation-name: heart-small--4;
-  -webkit-animation-delay: 3.2s;
-          animation-delay: 3.2s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 3.7s;
+          animation-delay: 3.7s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -3941,11 +3984,16 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  5% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(20px);
+            transform: translateY(-300px) translateX(20px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(20px);
@@ -3966,11 +4014,16 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  5% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(20px);
+            transform: translateY(-300px) translateX(20px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(20px);
@@ -3981,10 +4034,10 @@ input:focus {
 .heart-small--5 {
   -webkit-animation-name: heart-small--5;
           animation-name: heart-small--5;
-  -webkit-animation-delay: 3.3s;
-          animation-delay: 3.3s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 3.8s;
+          animation-delay: 3.8s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -4005,13 +4058,18 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     -webkit-transform: translateY(-180px) translateX(3px);
             transform: translateY(-180px) translateX(3px);
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(5px);
+            transform: translateY(-300px) translateX(5px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(5px);
@@ -4032,13 +4090,18 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     -webkit-transform: translateY(-180px) translateX(3px);
             transform: translateY(-180px) translateX(3px);
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(5px);
+            transform: translateY(-300px) translateX(5px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(5px);
@@ -4049,10 +4112,10 @@ input:focus {
 .heart-small--6 {
   -webkit-animation-name: heart-small--6;
           animation-name: heart-small--6;
-  -webkit-animation-delay: 3.4s;
-          animation-delay: 3.4s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 3.9s;
+          animation-delay: 3.9s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -4073,11 +4136,16 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-7px);
+            transform: translateY(-300px) translateX(-7px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(-7px);
@@ -4098,11 +4166,16 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-7px);
+            transform: translateY(-300px) translateX(-7px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(-7px);
@@ -4113,10 +4186,10 @@ input:focus {
 .heart-small--7 {
   -webkit-animation-name: heart-small--7;
           animation-name: heart-small--7;
-  -webkit-animation-delay: 3.5s;
-          animation-delay: 3.5s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -4137,15 +4210,20 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
   }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-3px);
+            transform: translateY(-300px) translateX(-3px);
+    opacity: 0.0;
+  }
   100% {
-    -webkit-transform: translateY(-300px) translateX(-2px);
-            transform: translateY(-300px) translateX(-2px);
+    -webkit-transform: translateY(-300px) translateX(-3px);
+            transform: translateY(-300px) translateX(-3px);
     opacity: 0.0;
   }
 }
@@ -4162,25 +4240,30 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
   }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-3px);
+            transform: translateY(-300px) translateX(-3px);
+    opacity: 0.0;
+  }
   100% {
-    -webkit-transform: translateY(-300px) translateX(-2px);
-            transform: translateY(-300px) translateX(-2px);
+    -webkit-transform: translateY(-300px) translateX(-3px);
+            transform: translateY(-300px) translateX(-3px);
     opacity: 0.0;
   }
 }
 .heart-small--8 {
   -webkit-animation-name: heart-small--8;
           animation-name: heart-small--8;
-  -webkit-animation-delay: 3.6s;
-          animation-delay: 3.6s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 4.1s;
+          animation-delay: 4.1s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -4201,11 +4284,16 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-7px);
+            transform: translateY(-300px) translateX(-7px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(-7px);
@@ -4226,11 +4314,16 @@ input:focus {
   3% {
     opacity: 1;
   }
-  50% {
+  15% {
     opacity: 0.5;
   }
-  95% {
+  30% {
     opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-7px);
+            transform: translateY(-300px) translateX(-7px);
+    opacity: 0.0;
   }
   100% {
     -webkit-transform: translateY(-300px) translateX(-7px);
@@ -4241,10 +4334,10 @@ input:focus {
 .heart-small--9 {
   -webkit-animation-name: heart-small--9;
           animation-name: heart-small--9;
-  -webkit-animation-delay: 3.7s;
-          animation-delay: 3.7s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -4265,13 +4358,13 @@ input:focus {
   3% {
     opacity: 1;
   }
-  40% {
+  15% {
     opacity: 0.5;
   }
-  70% {
+  30% {
     opacity: 0.1;
   }
-  80% {
+  35% {
     -webkit-transform: translateY(-300px) translateX(-4px);
             transform: translateY(-300px) translateX(-4px);
     opacity: 0.0;
@@ -4295,13 +4388,13 @@ input:focus {
   3% {
     opacity: 1;
   }
-  40% {
+  15% {
     opacity: 0.5;
   }
-  70% {
+  30% {
     opacity: 0.1;
   }
-  80% {
+  35% {
     -webkit-transform: translateY(-300px) translateX(-4px);
             transform: translateY(-300px) translateX(-4px);
     opacity: 0.0;
@@ -4315,10 +4408,10 @@ input:focus {
 .heart-small--10 {
   -webkit-animation-name: heart-small--10;
           animation-name: heart-small--10;
-  -webkit-animation-delay: 3.8s;
-          animation-delay: 3.8s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 4.3s;
+          animation-delay: 4.3s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -4328,71 +4421,71 @@ input:focus {
 }
 @-webkit-keyframes heart-small--10 {
   0% {
-    -webkit-transform: translateY(-90px);
-            transform: translateY(-90px);
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
     opacity: 0;
   }
   1% {
-    -webkit-transform: translateY(-90px) translateX(0px);
-            transform: translateY(-90px) translateX(0px);
+    -webkit-transform: translateY(-80px) translateX(-12px);
+            transform: translateY(-80px) translateX(-12px);
   }
   3% {
     opacity: 1;
   }
-  40% {
+  15% {
     opacity: 0.5;
   }
-  70% {
+  30% {
     opacity: 0.1;
   }
-  80% {
-    -webkit-transform: translateY(-300px) translateX(0px);
-            transform: translateY(-300px) translateX(0px);
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-30px);
+            transform: translateY(-300px) translateX(-30px);
     opacity: 0.0;
   }
   100% {
-    -webkit-transform: translateY(-300px) translateX(4px);
-            transform: translateY(-300px) translateX(4px);
+    -webkit-transform: translateY(-300px) translateX(-30px);
+            transform: translateY(-300px) translateX(-30px);
     opacity: 0.0;
   }
 }
 @keyframes heart-small--10 {
   0% {
-    -webkit-transform: translateY(-90px);
-            transform: translateY(-90px);
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
     opacity: 0;
   }
   1% {
-    -webkit-transform: translateY(-90px) translateX(0px);
-            transform: translateY(-90px) translateX(0px);
+    -webkit-transform: translateY(-80px) translateX(-12px);
+            transform: translateY(-80px) translateX(-12px);
   }
   3% {
     opacity: 1;
   }
-  40% {
+  15% {
     opacity: 0.5;
   }
-  70% {
+  30% {
     opacity: 0.1;
   }
-  80% {
-    -webkit-transform: translateY(-300px) translateX(0px);
-            transform: translateY(-300px) translateX(0px);
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-30px);
+            transform: translateY(-300px) translateX(-30px);
     opacity: 0.0;
   }
   100% {
-    -webkit-transform: translateY(-300px) translateX(4px);
-            transform: translateY(-300px) translateX(4px);
+    -webkit-transform: translateY(-300px) translateX(-30px);
+            transform: translateY(-300px) translateX(-30px);
     opacity: 0.0;
   }
 }
 .heart-small--11 {
   -webkit-animation-name: heart-small--11;
           animation-name: heart-small--11;
-  -webkit-animation-delay: 3.9s;
-          animation-delay: 3.9s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 4.4s;
+          animation-delay: 4.4s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -4407,26 +4500,28 @@ input:focus {
     opacity: 0;
   }
   1% {
-    -webkit-transform: translateY(-90px) translateX(4px);
-            transform: translateY(-90px) translateX(4px);
+    -webkit-transform: translateY(-90px) translateX(12px);
+            transform: translateY(-90px) translateX(12px);
   }
   3% {
     opacity: 1;
   }
-  40% {
+  15% {
+    -webkit-transform: translateY(-200px) translateX(22px);
+            transform: translateY(-200px) translateX(22px);
     opacity: 0.5;
   }
-  70% {
+  30% {
     opacity: 0.1;
   }
-  80% {
-    -webkit-transform: translateY(-300px) translateX(4px);
-            transform: translateY(-300px) translateX(4px);
+  35% {
+    -webkit-transform: translateY(-300px) translateX(0px);
+            transform: translateY(-300px) translateX(0px);
     opacity: 0.0;
   }
   100% {
-    -webkit-transform: translateY(-300px) translateX(6px);
-            transform: translateY(-300px) translateX(6px);
+    -webkit-transform: translateY(-300px) translateX(0px);
+            transform: translateY(-300px) translateX(0px);
     opacity: 0.0;
   }
 }
@@ -4437,36 +4532,38 @@ input:focus {
     opacity: 0;
   }
   1% {
-    -webkit-transform: translateY(-90px) translateX(4px);
-            transform: translateY(-90px) translateX(4px);
+    -webkit-transform: translateY(-90px) translateX(12px);
+            transform: translateY(-90px) translateX(12px);
   }
   3% {
     opacity: 1;
   }
-  40% {
+  15% {
+    -webkit-transform: translateY(-200px) translateX(22px);
+            transform: translateY(-200px) translateX(22px);
     opacity: 0.5;
   }
-  70% {
+  30% {
     opacity: 0.1;
   }
-  80% {
-    -webkit-transform: translateY(-300px) translateX(4px);
-            transform: translateY(-300px) translateX(4px);
+  35% {
+    -webkit-transform: translateY(-300px) translateX(0px);
+            transform: translateY(-300px) translateX(0px);
     opacity: 0.0;
   }
   100% {
-    -webkit-transform: translateY(-300px) translateX(6px);
-            transform: translateY(-300px) translateX(6px);
+    -webkit-transform: translateY(-300px) translateX(0px);
+            transform: translateY(-300px) translateX(0px);
     opacity: 0.0;
   }
 }
 .heart-small--12 {
   -webkit-animation-name: heart-small--12;
           animation-name: heart-small--12;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
@@ -4481,26 +4578,28 @@ input:focus {
     opacity: 0;
   }
   1% {
-    -webkit-transform: translateY(-90px) translateX(4px);
-            transform: translateY(-90px) translateX(4px);
+    -webkit-transform: translateY(-90px) translateX(-9px);
+            transform: translateY(-90px) translateX(-9px);
   }
   3% {
     opacity: 1;
   }
-  40% {
+  15% {
+    -webkit-transform: translateY(-180px) translateX(-17px);
+            transform: translateY(-180px) translateX(-17px);
     opacity: 0.5;
   }
-  70% {
+  30% {
     opacity: 0.1;
   }
-  80% {
-    -webkit-transform: translateY(-300px) translateX(4px);
-            transform: translateY(-300px) translateX(4px);
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-5px);
+            transform: translateY(-300px) translateX(-5px);
     opacity: 0.0;
   }
   100% {
-    -webkit-transform: translateY(-300px) translateX(4px);
-            transform: translateY(-300px) translateX(4px);
+    -webkit-transform: translateY(-300px) translateX(-5px);
+            transform: translateY(-300px) translateX(-5px);
     opacity: 0.0;
   }
 }
@@ -4511,62 +4610,592 @@ input:focus {
     opacity: 0;
   }
   1% {
-    -webkit-transform: translateY(-90px) translateX(4px);
-            transform: translateY(-90px) translateX(4px);
+    -webkit-transform: translateY(-90px) translateX(-9px);
+            transform: translateY(-90px) translateX(-9px);
   }
   3% {
     opacity: 1;
   }
-  40% {
+  15% {
+    -webkit-transform: translateY(-180px) translateX(-17px);
+            transform: translateY(-180px) translateX(-17px);
     opacity: 0.5;
   }
-  70% {
+  30% {
     opacity: 0.1;
   }
-  80% {
-    -webkit-transform: translateY(-300px) translateX(4px);
-            transform: translateY(-300px) translateX(4px);
+  35% {
+    -webkit-transform: translateY(-300px) translateX(-5px);
+            transform: translateY(-300px) translateX(-5px);
     opacity: 0.0;
   }
   100% {
-    -webkit-transform: translateY(-300px) translateX(4px);
-            transform: translateY(-300px) translateX(4px);
+    -webkit-transform: translateY(-300px) translateX(-5px);
+            transform: translateY(-300px) translateX(-5px);
     opacity: 0.0;
   }
 }
-@media (min-width: 319px) and (max-width: 808px) {
-  .page-header {
-    margin: 0px auto;
-    max-width: 767px;
+.heart-small--13 {
+  -webkit-animation-name: heart-small--13;
+          animation-name: heart-small--13;
+  -webkit-animation-delay: 4.6s;
+          animation-delay: 4.6s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@-webkit-keyframes heart-small--13 {
+  0% {
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
+    opacity: 0;
   }
-  .page-header__wrapper {
-    margin: 0px auto;
-    min-width: 319px;
-    max-width: 767px;
-    padding-left: 10px;
-    padding-right: 10px;
-    flex-wrap: wrap;
+  1% {
+    -webkit-transform: translateY(-80px) translateX(5px);
+            transform: translateY(-80px) translateX(5px);
   }
-  .search {
-    order: 1;
+  3% {
+    opacity: 1;
   }
-  .search form {
-    width: 310px;
+  5% {
+    opacity: 0.5;
   }
-  .search input {
-    left: 0;
-    padding: 0 42px 0 70px;
+  30% {
+    opacity: 0.1;
   }
-  .search__btn {
-    left: 0;
+  35% {
+    -webkit-transform: translateY(-300px) translateX(20px);
+            transform: translateY(-300px) translateX(20px);
+    opacity: 0.0;
+  }
+  100% {
+    -webkit-transform: translateY(-300px) translateX(20px);
+            transform: translateY(-300px) translateX(20px);
+    opacity: 0.0;
   }
 }
-@media (min-width: 319px) and (max-width: 767px) {
+@keyframes heart-small--13 {
+  0% {
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
+    opacity: 0;
+  }
+  1% {
+    -webkit-transform: translateY(-80px) translateX(5px);
+            transform: translateY(-80px) translateX(5px);
+  }
+  3% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(20px);
+            transform: translateY(-300px) translateX(20px);
+    opacity: 0.0;
+  }
+  100% {
+    -webkit-transform: translateY(-300px) translateX(20px);
+            transform: translateY(-300px) translateX(20px);
+    opacity: 0.0;
+  }
+}
+.heart-small--14 {
+  -webkit-animation-name: heart-small--14;
+          animation-name: heart-small--14;
+  -webkit-animation-delay: 4.7s;
+          animation-delay: 4.7s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@keyframes heart-small--5 {
+  0% {
+    -webkit-transform: translateY(-90px);
+            transform: translateY(-90px);
+    opacity: 0;
+  }
+  1% {
+    -webkit-transform: translateY(-90px) translateX(-2px);
+            transform: translateY(-90px) translateX(-2px);
+  }
+  3% {
+    opacity: 1;
+  }
+  15% {
+    -webkit-transform: translateY(-180px) translateX(3px);
+            transform: translateY(-180px) translateX(3px);
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 0.1;
+  }
+  35% {
+    -webkit-transform: translateY(-300px) translateX(5px);
+            transform: translateY(-300px) translateX(5px);
+    opacity: 0.0;
+  }
+  100% {
+    -webkit-transform: translateY(-300px) translateX(5px);
+            transform: translateY(-300px) translateX(5px);
+    opacity: 0.0;
+  }
+}
+/*------------- новые----------*/
+/*
+.heart--31 {
+	animation-name: heart--31;
+	animation-delay: 3.5s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--31 {
+	0% {
+		transform:translateY(-80px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-80px) translateX(-12px);
+	}
+	3% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0.5;
+	}
+	95% {
+		opacity: 0.1;
+	}
+	100% {
+		transform:translateY(-300px) translateX(-30px);
+		opacity: 0.0;
+	}
+}
+
+.heart--32 {
+	animation-name: heart--32;
+	animation-delay: 3.55s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--32 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(12px);
+	}
+	3% {
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(-200px) translateX(22px);
+		opacity: 0.5;
+	}
+	95% {
+		opacity: 0.1;
+	}
+	100% {
+		transform:translateY(-300px) translateX(00px);
+		opacity: 0.0;
+	}
+}
+
+.heart--33 {
+	animation-name: heart--33;
+	animation-delay: 3.6s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--33 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(-9px);
+	}
+	3% {
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(-180px) translateX(-17px);
+		opacity: 0.5;
+	}
+	95% {
+		opacity: 0.1;
+	}
+	100% {
+		transform:translateY(-300px) translateX(-5px);
+		opacity: 0.0;
+	}
+}
+
+.heart--34 {
+	animation-name: heart--34;
+	animation-delay: 3.7s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--34 {
+	0% {
+		transform:translateY(-80px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-80px) translateX(5px);
+	}
+	3% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	95% {
+		opacity: 0.1;
+	}
+	100% {
+		transform:translateY(-300px) translateX(20px);
+		opacity: 0.0;
+	}
+}
+
+.heart--35 {
+	animation-name: heart--35;
+	animation-delay: 3.8s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--35 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(-2px);
+	}
+	3% {
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(-180px) translateX(3px);
+		opacity: 0.5;
+	}
+	95% {
+		opacity: 0.1;
+	}
+	100% {
+		transform:translateY(-300px) translateX(5px);
+		opacity: 0.0;
+	}
+}
+
+.heart--36 {
+	animation-name: heart--36;
+	animation-delay: 3.9s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--36 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(-7px);
+	}
+	3% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	95% {
+		opacity: 0.1;
+	}
+	100% {
+		transform:translateY(-300px) translateX(-7px);
+		opacity: 0.0;
+	}
+}
+
+.heart--37 {
+	animation-name: heart--37;
+	animation-delay: 4s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--37 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(-2px);
+	}
+	3% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	95% {
+		opacity: 0.1;
+	}
+	100% {
+		transform:translateY(-300px) translateX(-2px);
+		opacity: 0.0;
+	}
+}
+
+.heart--38 {
+	animation-name: heart--38;
+	animation-delay: 4.1s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--38 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(-7px);
+	}
+	3% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	95% {
+		opacity: 0.1;
+	}
+	100% {
+		transform:translateY(-300px) translateX(-7px);
+		opacity: 0.0;
+	}
+}
+
+.heart--39 {
+	animation-name: heart--39;
+	animation-delay: 4.2s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--39 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(-4px);
+	}
+	3% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 0.5;
+	}
+	70% {
+		opacity: 0.1;
+	}
+	80% {
+		transform:translateY(-300px) translateX(-4px);
+		opacity: 0.0;
+	}
+	100% {
+		transform:translateY(-300px) translateX(-4px);
+		opacity: 0.0;
+	}
+}
+
+.heart--40 {
+	animation-name: heart--40;
+	animation-delay: 4.3s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--40 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(0px);
+	}
+	3% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 0.5;
+	}
+	70% {
+		opacity: 0.1;
+	}
+	80% {
+		transform:translateY(-300px) translateX(0px);
+		opacity: 0.0;
+	}
+	100% {
+		transform:translateY(-300px) translateX(4px);
+		opacity: 0.0;
+	}
+}
+
+.heart--41 {
+	animation-name: heart--41;
+	animation-delay: 4.4s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--41 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(4px);
+	}
+	3% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 0.5;
+	}
+	70% {
+		opacity: 0.1;
+	}
+	80% {
+		transform:translateY(-300px) translateX(4px);
+		opacity: 0.0;
+	}
+	100% {
+		transform:translateY(-300px) translateX(6px);
+		opacity: 0.0;
+	}
+}
+
+.heart--42 {
+	animation-name: heart--42;
+	animation-delay: 4.5s;
+	animation-duration: @heart-duration;
+	animation-iteration-count: infinite; 
+	animation-fill-mode: forwards;
+	animation-timing-function: @heart-linear;
+}
+
+@keyframes heart--42 {
+	0% {
+		transform:translateY(-90px);
+		opacity: 0;
+	}
+	1% {
+		transform: translateY(-90px) translateX(4px);
+	}
+	3% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 0.5;
+	}
+	70% {
+		opacity: 0.1;
+	}
+	80% {
+		transform:translateY(-300px) translateX(4px);
+		opacity: 0.0;
+	}
+	100% {
+		transform:translateY(-300px) translateX(4px);
+		opacity: 0.0;
+	}
+}
+*/
+@media (min-width: 768px) and (max-width: 1170px) {
+  /*.logo {
+		width: 340px;
+		height: 340px;
+	}*/
+}
+@media (min-width: 769px) and (max-width: 1170px) {
+  /*.page-header {
+		.container-tablet-fluid();
+	}
+	.page-header__wrapper {
+		.container-tablet();
+	}*/
+}
+@media (max-width: 768px) {
+  /*.page-header {
+		.container-mob-fluid();
+	}
+	.page-header__wrapper {
+		.container-mob();
+		flex-wrap: wrap;
+	}*/
+  .page-header__wrapper {
+    flex-wrap: wrap;
+  }
+  .page-header__wrapper {
+    position: relative;
+  }
+  .promo {
+    margin-top: 100px;
+  }
   .logo {
-    order: 2;
-    width: 340px;
+    /*order: 1;*/
+    max-width: 340px;
     height: 340px;
-    margin-left: auto;
+    /*margin: 0 auto;*/
   }
   /*.logo {
 		
@@ -4578,23 +5207,93 @@ input:focus {
 	.logo__text {
 		font-size: 14px;
 	}*/
+  .blocks__items {
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .blocks__item {
+    margin: 0 auto;
+  }
+  .photo__block {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .photo__block--2 {
+    flex-direction: row-reverse;
+  }
+  .photo__text {
+    width: 100%;
+  }
+  .photo__img1 {
+    width: 100%;
+    height: auto;
+  }
+  .photo__img2 {
+    width: 100%;
+    height: auto;
+  }
+  .review__block {
+    flex-wrap: wrap;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .review__text {
+    width: 100%;
+  }
+  .review__img {
+    margin: 0 auto;
+  }
+  .about {
+    background-size: cover;
+  }
+  .about__text {
+    width: 60%;
+  }
+  .about__text-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .about__text-wrapper h2 {
+    font-size: 40px;
+  }
+  .about__text-wrapper p {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .search {
+    /*order: 2;*/
+    /*form {
+			max-width: 310px;
+		}
+		input {
+			left: 0;
+			padding: 0 42px 0 70px;
+		}
+	}
+	.search__btn {
+		left: 0;
+	}*/
+  }
+  .search {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .main-nav {
+    margin-bottom: 0;
+    /*order: 2;*/
+  }
+  .main-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
-@media (min-width: 768px) and (max-width: 1170px) {
+@media (max-width: 468px) {
   .logo {
-    width: 340px;
-    height: 340px;
+    margin-bottom: 100px;
   }
-}
-@media (min-width: 808px) and (max-width: 1170px) {
-  .page-header {
-    margin: 0px auto;
-    max-width: 1170px;
-  }
-  .page-header__wrapper {
-    margin: 0px auto;
-    min-width: 768px;
-    max-width: 1170px;
-    padding-left: 20px;
-    padding-right: 20px;
+  .about__text {
+    width: 90%;
   }
 }
